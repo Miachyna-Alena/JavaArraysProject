@@ -1,5 +1,6 @@
 package by.itstep.miachyna.javalessons.lesson18.controller;
 
+import by.itstep.miachyna.javalessons.lesson18.model.logic.ArrayWorker;
 import by.itstep.miachyna.javalessons.lesson18.util.ArrayInitializer;
 import by.itstep.miachyna.javalessons.lesson18.util.Convertor;
 import by.itstep.miachyna.javalessons.lesson18.view.Printer;
@@ -21,6 +22,18 @@ public class Task01 {
 //      ArrayInitializer.userInit(array);
         ArrayInitializer.randomInit(array);
 
-        Printer.print(Convertor.toString(array));
+        Printer.print("Array elements: " + Convertor.toString(array));
+
+        int sum = ArrayWorker.sum(array);
+        int max = ArrayWorker.max(array);
+        int min = ArrayWorker.min(array);
+        double avg = ArrayWorker.avg(array);
+
+        String msg = String.format("\nSum of array elements = %d\n" +
+                "Max element = %d\n" +
+                "Min element = %d\n" +
+                "Average mean = %.2f", sum, max, min, avg);
+
+        Printer.print(msg);
     }
 }
